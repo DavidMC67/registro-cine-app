@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="14.0" styleClass="login-container"
+      stylesheets="@styles.css"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.myapp.controller.LoginController">
+    <padding>
+        <Insets top="40.0" bottom="40.0" left="40.0" right="40.0" />
+    </padding>
+
+    <ImageView fitWidth="280" preserveRatio="true">
+        <image>
+            <Image url="@images/splash-logo.png" />
+        </image>
+    </ImageView>
+
+    <Label styleClass="titulo" text="Iniciar Sesión" />
+
+    <VBox spacing="6.0" styleClass="campo-box">
+        <Label styleClass="etiqueta" text="Usuario" />
+        <TextField fx:id="txtUsuario" promptText="admin" />
+    </VBox>
+
+    <VBox spacing="6.0" styleClass="campo-box">
+        <Label styleClass="etiqueta" text="Contraseña" />
+        <PasswordField fx:id="txtPassword" promptText="123" />
+    </VBox>
+
+    <Label fx:id="lblError" styleClass="mensaje-error" />
+
+    <Button styleClass="boton-primario" text="Ingresar" onAction="#handleIngresar" maxWidth="Infinity" />
+
+    <Hyperlink text="Crear cuenta" onAction="#handleCrearCuenta" />
+</VBox>

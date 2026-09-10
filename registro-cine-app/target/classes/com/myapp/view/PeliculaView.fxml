@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="peliculas-container" stylesheets="@styles.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.myapp.controller.PeliculaController">
+
+    <top>
+        <VBox spacing="10.0" styleClass="form-box">
+            <padding>
+                <Insets top="16.0" bottom="10.0" left="16.0" right="16.0" />
+            </padding>
+
+            <Label styleClass="titulo-seccion" text="Gestión de Películas" />
+
+            <GridPane hgap="12.0" vgap="8.0">
+                <Label text="Título" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="txtTitulo" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="Director" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+                <TextField fx:id="txtDirector" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+
+                <Label text="Género" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <ComboBox fx:id="cbGenero" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity" />
+
+                <Label text="Clasificación" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+                <ComboBox fx:id="cbClasificacion" GridPane.rowIndex="1" GridPane.columnIndex="3" maxWidth="Infinity" />
+
+                <Label text="Duración (min)" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="txtDuracion" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                <Label text="Póster" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+                <HBox spacing="6.0" alignment="CENTER_LEFT" GridPane.rowIndex="2" GridPane.columnIndex="3">
+                    <TextField fx:id="txtPoster" editable="false" HBox.hgrow="ALWAYS" />
+                    <Button styleClass="boton-secundario" text="Examinar" onAction="#handleExaminar" />
+                    <ImageView fx:id="imgPoster" fitWidth="42" fitHeight="58" preserveRatio="true" />
+                </HBox>
+            </GridPane>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                <Button styleClass="boton-secundario" text="Nuevo" onAction="#handleNuevo" />
+                <Button styleClass="boton-primario" text="Guardar" onAction="#handleGuardar" />
+                <Button styleClass="boton-primario" text="Actualizar" onAction="#handleActualizar" />
+                <Button styleClass="boton-secundario boton-logout" text="Eliminar" onAction="#handleEliminar" />
+            </HBox>
+
+            <Label fx:id="lblMensaje" styleClass="mensaje-error" />
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="16.0">
+            <BorderPane.margin>
+                <Insets top="10.0" bottom="16.0" left="16.0" right="16.0" />
+            </BorderPane.margin>
+            <TableView fx:id="tablaPeliculas" HBox.hgrow="ALWAYS" />
+            <VBox alignment="TOP_CENTER" spacing="8.0" styleClass="form-box" prefWidth="180.0">
+                <padding>
+                    <Insets top="12.0" bottom="12.0" left="10.0" right="10.0" />
+                </padding>
+                <Label styleClass="titulo-seccion" text="Póster" />
+                <ImageView fx:id="imgPosterGrande" fitWidth="150" fitHeight="210" preserveRatio="true">
+                    <image>
+                        <Image url="@images/splash-logo.png" />
+                    </image>
+                </ImageView>
+            </VBox>
+        </HBox>
+    </center>
+
+</BorderPane>

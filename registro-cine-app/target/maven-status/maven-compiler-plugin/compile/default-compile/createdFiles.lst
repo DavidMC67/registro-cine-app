@@ -1,0 +1,15 @@
+com\myapp\model\Clasificacion.class
+com\myapp\model\Usuario.class
+com\myapp\config\DataBaseConnection.class
+com\myapp\config\Credentials.class
+com\myapp\controller\PeliculaController$1.class
+com\myapp\model\Genero.class
+com\myapp\controller\RegistroController.class
+com\myapp\model\Rol.class
+com\myapp\controller\LoginController.class
+com\myapp\controller\PeliculaController.class
+com\myapp\repository\AuthRepository.class
+com\myapp\repository\PeliculaRepository.class
+com\myapp\controller\MainMenuController.class
+com\myapp\main\App.class
+com\myapp\model\Pelicula.class
